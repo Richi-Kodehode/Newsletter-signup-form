@@ -4,14 +4,13 @@ const tycard = document.querySelector(".tycard");
 const subbtn = document.querySelector(".subbtn");
 const inputField = document.querySelector("input");
 
-if (inputField.value !== "") {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (inputField.value !== "") {
     card.classList.add("hide");
     tycard.classList.remove("hide");
-  });
-}
-console.log(inputField.value);
+  }
+});
 
 subbtn.addEventListener("click", (e) => {
   e.preventDefault();
