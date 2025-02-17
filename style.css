@@ -85,6 +85,25 @@ input::placeholder {
 .form-group input {
   grid-column: 1 / -1;
 }
+.form-group .error {
+  grid-row: 1;
+  grid-column: 2;
+  text-align: end;
+  color: var(--clr-accent-400);
+  display: none;
+}
+
+.form-group > :not(:focus):invalid + .error {
+  display: block;
+}
+
+.form-group.error-field {
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-group.error-field input {
+  grid-column: 1 / -1;
+}
 
 .button {
   background: var(--clr-neutral-800);
@@ -94,6 +113,7 @@ input::placeholder {
   border: 0;
   padding: 1rem;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .button:hover,
@@ -143,6 +163,48 @@ form {
   background-color: var(--clr-neutral-100);
 }
 
+.tycard {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  background-color: white;
+  padding: 50px;
+  border-radius: 1rem;
+}
+
+.tycard img {
+  width: 50px;
+  padding: 0;
+  border: 0;
+}
+.tycard h1 {
+  color: var(--clr-neutral-800);
+  line-height: 1.1;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.tycard p {
+  font-size: var(--fs-300);
+  padding-bottom: 1.5rem;
+}
+.tycontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+/*  
+
+
+media queries 
+
+
+
+*/
 @media (min-width: 650px) {
   .card {
     display: grid;
